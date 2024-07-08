@@ -2,6 +2,21 @@ package com.webbing_mb.domain;
 
 import java.sql.Timestamp;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
+@Getter
+@Setter
+@Builder
+
 public class MemberVO 
 {
 	private String userId;

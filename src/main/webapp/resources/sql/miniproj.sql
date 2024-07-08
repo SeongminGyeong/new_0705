@@ -19,3 +19,12 @@ CREATE TABLE `webbing`.`member` (
 
 -- DB서버의 현재 날짜,시간을 출력하는 쿼리문;
 select now();
+
+select md5('1234');
+select sha1('1234');
+
+select sha1(md5('1234'));
+
+-- Member테이블에 회원을 insert하는 쿼리문
+insert into member(userId, userPwd, userName, mobile, email)
+value(?,sha1(md5(?)),?,?,?);

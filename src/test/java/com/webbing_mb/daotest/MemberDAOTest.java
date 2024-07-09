@@ -49,13 +49,33 @@ public class MemberDAOTest
 	}
 	*/
 	
-	@Test
+/*	@Test
 	public void selectAllMemberTest() 
 	{
 		List<MemberVO> members = mdao.selectAllMember();
 		
 		for (MemberVO m : members) {
 			System.out.println(m.toString());
+		}
+	}*/
+	/*@Test
+	public void updateTest() 
+	{
+		String userId = "douner";
+		String mobile = "010-2456-8987";
+		if(mdao.updateMemberMobile(userId,mobile)==1) {
+			System.out.println("수정성공");
+		}
+			
+		
+	}*/
+	@Test
+	public void deleteTest() 
+	{
+		String userId = "douner";
+		if(mdao.removeMember(userId)==1)
+		{
+			System.out.println("삭제 완료");
 		}
 	}
 }

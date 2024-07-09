@@ -26,7 +26,7 @@ public class MemberDAOTest
 //	}
 	
 	//CRUD (CREATE(데이터 생성-INSERT) READ(SELECT) UPDATE(UPDATE) DELETE(삭제))
-/*	@Test
+	@Test
 	public void testInsertMember() {
 		MemberVO newMember = MemberVO.builder()
 			.userId("douner")
@@ -41,7 +41,7 @@ public class MemberDAOTest
 			System.out.println("회원 저장 성공");
 		}
 	}
-*/	
+	
 /*	@Test
 	public void selectMemberById() 
 	{
@@ -69,7 +69,7 @@ public class MemberDAOTest
 			
 		
 	}*/
-	@Test
+	/*@Test
 	public void deleteTest() 
 	{
 		String userId = "douner";
@@ -77,5 +77,5 @@ public class MemberDAOTest
 		{
 			System.out.println("삭제 완료");
 		}
-	}
+	}*/
 }

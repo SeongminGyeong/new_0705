@@ -19,7 +19,7 @@
       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		<!-- mysql 데이터베이스 연결 -->
+		<!-- mysql 데이터베이스 연결 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
@@ -27,6 +27,20 @@
 		</property>
 		<property name="url"
 			value="jdbc:mysql://127.0.0.1:3306/webbing?useSSL=false">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+	-->
+	
+	<!-- log4jdbc 이용시 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+			
+		<property name="url"
+			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/webbing?useSSL=false">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>

@@ -1,7 +1,9 @@
 package com.webbing_mb.persistence;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +41,22 @@ public class MemberDAOImpl implements MemberDAO
 	public List<MemberVO> selectAllMember()
 	{
 		return sqlSession.selectList(NS + ".getAllMember");
+	}
+	
+	@Override
+	public int updateMemberMobile(String userId, String mobile)
+	{
+		//SqlSessionTemplate.update()는 parameter를 1개만 받을 수 있다.
+		//여기에서는 쿼리문에 전달할 parameter가 2개 이므로, Map으로 parameter를 감싸서 넘겨준다.
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("mobile" ,mobile);
+		params.put("userId", userId);
+		
+		return sqlSession.update(NS + ".modifyMobile", params);
+	}
+	@Override
+	public int removeMember(String userId)
+	{
+		return sqlSession.delete(NS + ".removeMember", userId);
 	}
 }

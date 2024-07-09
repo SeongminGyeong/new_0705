@@ -25,4 +25,14 @@
 	<select id="getAllMember" resultType="com.webbing_mb.domain.MemberVO">
 		select * from member
 	</select>
+	
+	<!--  전화번호 변경 쿼리문 -->
+	<update id="modifyMobile">
+		update member set mobile = #{mobile}
+		where userId =#{userId}
+	</update>
+	<!--  회원정보 탈퇴 -->
+	<delete id="removeMember">delete from member where userId = #{userId}
+	</delete>
+	
 </mapper>

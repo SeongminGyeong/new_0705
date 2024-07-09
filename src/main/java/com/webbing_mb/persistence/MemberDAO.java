@@ -14,14 +14,19 @@ public interface MemberDAO
 	
 	//default int countMember() {
 	//	return 0;
+	
 	//newMember를insert하는 객체
 	public int registerMember(MemberVO newMember);
-
+	
+	//userId로 회원 정보를 얻어오는 메서드
 	public MemberVO selectMemberByUserId(String userId);
-
+	
+	//회원정보를 가져오는 메서드
 	public List<MemberVO> selectAllMember();
 	
+	//회원의 전화번호를 변경할 수 있는 메서드
+	public int updateMemberMobile(String userId, String mobile);
 	
-		
-	
+	//회원을 탈퇴하는 메서드
+	public int removeMember(String userId);
 }
